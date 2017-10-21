@@ -1,0 +1,22 @@
+{
+  "name": "SimpleREST",
+  "version": "0.1.0",
+  "summary": "A short description of SimpleREST.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/alexander-gaidukov/SimpleREST",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "alexander-gaidukov": "alexander.gaidukov@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/alexander-gaidukov/SimpleREST.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SimpleREST/Classes/**/*"
+}

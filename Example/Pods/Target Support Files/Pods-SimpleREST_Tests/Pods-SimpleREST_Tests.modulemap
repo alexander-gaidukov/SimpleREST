@@ -1,0 +1,6 @@
+framework module Pods_SimpleREST_Tests {
+  umbrella header "Pods-SimpleREST_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

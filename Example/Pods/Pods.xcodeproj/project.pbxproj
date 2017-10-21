@@ -1,0 +1,784 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		5C48ED7F290223D6D66779C155EB1975 /* SimpleREST-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C04EAFF6CF8512EB00BCC22299BDC5A8 /* SimpleREST-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		710804801F9B70BB00B37F5B /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108047A1F9B70B400B37F5B /* Path.swift */; };
+		710804811F9B70BD00B37F5B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108047C1F9B70B400B37F5B /* Reachability.swift */; };
+		710804821F9B70BF00B37F5B /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108047D1F9B70B400B37F5B /* RequestMethod.swift */; };
+		710804831F9B70C200B37F5B /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108047F1F9B70B500B37F5B /* Resource.swift */; };
+		710804841F9B70C400B37F5B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108047E1F9B70B400B37F5B /* Result.swift */; };
+		710804851F9B70C600B37F5B /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710804791F9B70B400B37F5B /* WebClient.swift */; };
+		710804861F9B70C900B37F5B /* WebError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108047B1F9B70B400B37F5B /* WebError.swift */; };
+		7108048B1F9B70F600B37F5B /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710804891F9B70F300B37F5B /* Cache.swift */; };
+		7108048C1F9B70F800B37F5B /* CachedWebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108048A1F9B70F400B37F5B /* CachedWebClient.swift */; };
+		7108048D1F9B70FA00B37F5B /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710804881F9B70F300B37F5B /* CacheItem.swift */; };
+		7C6A3718E47A093E6E89B70FF98E56E8 /* Pods-SimpleREST_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C27311684E1B5767B2049E97BC356F8F /* Pods-SimpleREST_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		898148F800DBFFB588B04E363A1CB517 /* Pods-SimpleREST_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB53EFB920672397F5C09E616130552 /* Pods-SimpleREST_Example-dummy.m */; };
+		945ACB959FB5934A0DDC251C2937D39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		AFA848CA75CCDECD533C918F2163B38F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		B83EFC1ACD95F84118358229FBD9843E /* Pods-SimpleREST_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E96637D7413B89C38125C32C008B751D /* Pods-SimpleREST_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D2AD858A68FDECFC6731A3EF8404317C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
+		ECEC8325870441C2D08E2111253F031F /* SimpleREST-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8DC6A073434DC6DEC0208997EAD582 /* SimpleREST-dummy.m */; };
+		EDCFB9798DEA57732F06DEB4C17DA75C /* Pods-SimpleREST_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B7C687350A4B6CD50159E7F4252604E /* Pods-SimpleREST_Tests-dummy.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0F2474034BD940B5F016BCD69050CFF9 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 73538EE8F2D59B5C1B97E73AE5D007CE;
+			remoteInfo = SimpleREST;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		086260DB7188C26868BC01625CF044D6 /* Pods-SimpleREST_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleREST_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		0B87AFF2B4E1CD4BCB1AACB164596F2A /* Pods-SimpleREST_Tests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleREST_Tests-resources.sh"; sourceTree = "<group>"; };
+		0DD0D4E391FA2C022D8E304237071584 /* Pods-SimpleREST_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleREST_Tests.debug.xcconfig"; sourceTree = "<group>"; };
+		11A41E83331EB56953EFEDAEE65231DE /* Pods-SimpleREST_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleREST_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		18AA3527CD6A71CD87BD12B39B1D27D5 /* Pods-SimpleREST_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleREST_Example.release.xcconfig"; sourceTree = "<group>"; };
+		18EF8508F89FF3EAAF88A3427DFA39D4 /* SimpleREST.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SimpleREST.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2E52023112E62807F93719053F2517F5 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		36082E821531ED57A1FA6D2459B121B8 /* Pods-SimpleREST_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleREST_Example-frameworks.sh"; sourceTree = "<group>"; };
+		3B239A146D674CEF04F7258786E9D9C5 /* Pods-SimpleREST_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SimpleREST_Tests.modulemap"; sourceTree = "<group>"; };
+		3B7C687350A4B6CD50159E7F4252604E /* Pods-SimpleREST_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SimpleREST_Tests-dummy.m"; sourceTree = "<group>"; };
+		4777F23D266F5864C01CDE665E5ABA91 /* Pods-SimpleREST_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SimpleREST_Example.modulemap"; sourceTree = "<group>"; };
+		5502E1067B947C3702987EA3325E9916 /* Pods-SimpleREST_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SimpleREST_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6160391B973D2792A3128A3863234565 /* Pods_SimpleREST_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleREST_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		6D194B4258644CB621D39CCC06B3C872 /* Pods-SimpleREST_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleREST_Tests-frameworks.sh"; sourceTree = "<group>"; };
+		710804791F9B70B400B37F5B /* WebClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebClient.swift; path = SimpleREST/Classes/WebClient.swift; sourceTree = "<group>"; };
+		7108047A1F9B70B400B37F5B /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Path.swift; path = SimpleREST/Classes/Path.swift; sourceTree = "<group>"; };
+		7108047B1F9B70B400B37F5B /* WebError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebError.swift; path = SimpleREST/Classes/WebError.swift; sourceTree = "<group>"; };
+		7108047C1F9B70B400B37F5B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = SimpleREST/Classes/Reachability.swift; sourceTree = "<group>"; };
+		7108047D1F9B70B400B37F5B /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RequestMethod.swift; path = SimpleREST/Classes/RequestMethod.swift; sourceTree = "<group>"; };
+		7108047E1F9B70B400B37F5B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Result.swift; path = SimpleREST/Classes/Result.swift; sourceTree = "<group>"; };
+		7108047F1F9B70B500B37F5B /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = SimpleREST/Classes/Resource.swift; sourceTree = "<group>"; };
+		710804881F9B70F300B37F5B /* CacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CacheItem.swift; path = SimpleREST/Classes/CacheItem.swift; sourceTree = "<group>"; };
+		710804891F9B70F300B37F5B /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cache.swift; path = SimpleREST/Classes/Cache.swift; sourceTree = "<group>"; };
+		7108048A1F9B70F400B37F5B /* CachedWebClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CachedWebClient.swift; path = SimpleREST/Classes/CachedWebClient.swift; sourceTree = "<group>"; };
+		788DD0F74A780DC479A64A3BEA8A517D /* Pods-SimpleREST_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleREST_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		81887B3B4E047494EAFA9FCE041DD61D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8395AE13C0ED04BF299C3171FECAECD3 /* Pods_SimpleREST_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleREST_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CB53EFB920672397F5C09E616130552 /* Pods-SimpleREST_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SimpleREST_Example-dummy.m"; sourceTree = "<group>"; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		988BD01ADEF9894907D41E542AC9FA02 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A4E8C9E3D40408E96E436AB2DC96917E /* Pods-SimpleREST_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleREST_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		AD2878903787AACBD9363E423A0B9F1C /* SimpleREST.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SimpleREST.modulemap; sourceTree = "<group>"; };
+		C04EAFF6CF8512EB00BCC22299BDC5A8 /* SimpleREST-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimpleREST-umbrella.h"; sourceTree = "<group>"; };
+		C27311684E1B5767B2049E97BC356F8F /* Pods-SimpleREST_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleREST_Tests-umbrella.h"; sourceTree = "<group>"; };
+		E6C15D293B26D7D58DD5D203244B6F4C /* Pods-SimpleREST_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SimpleREST_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		E96637D7413B89C38125C32C008B751D /* Pods-SimpleREST_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SimpleREST_Example-umbrella.h"; sourceTree = "<group>"; };
+		EAAC54305FC5C456A936AEC69049F154 /* Pods-SimpleREST_Example-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleREST_Example-resources.sh"; sourceTree = "<group>"; };
+		EADCE13EDA8BBD8EA81F84CB4D3A0C3C /* SimpleREST-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimpleREST-prefix.pch"; sourceTree = "<group>"; };
+		FD8DC6A073434DC6DEC0208997EAD582 /* SimpleREST-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SimpleREST-dummy.m"; sourceTree = "<group>"; };
+		FDC70713471BB8C66713CC6B8B3867F2 /* SimpleREST.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SimpleREST.xcconfig; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2AF95DB6FD5281183163FCF5F70803EC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AFA848CA75CCDECD533C918F2163B38F /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		67D683AB95D1242C08547DDDC665EAE1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D2AD858A68FDECFC6731A3EF8404317C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		687AA2422829D5E75AF439A8503A9FED /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				945ACB959FB5934A0DDC251C2937D39A /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		11E5B810DABFC47DBCEF7C82792A22FA /* Pods-SimpleREST_Tests */ = {
+			isa = PBXGroup;
+			children = (
+				81887B3B4E047494EAFA9FCE041DD61D /* Info.plist */,
+				3B239A146D674CEF04F7258786E9D9C5 /* Pods-SimpleREST_Tests.modulemap */,
+				11A41E83331EB56953EFEDAEE65231DE /* Pods-SimpleREST_Tests-acknowledgements.markdown */,
+				A4E8C9E3D40408E96E436AB2DC96917E /* Pods-SimpleREST_Tests-acknowledgements.plist */,
+				3B7C687350A4B6CD50159E7F4252604E /* Pods-SimpleREST_Tests-dummy.m */,
+				6D194B4258644CB621D39CCC06B3C872 /* Pods-SimpleREST_Tests-frameworks.sh */,
+				0B87AFF2B4E1CD4BCB1AACB164596F2A /* Pods-SimpleREST_Tests-resources.sh */,
+				C27311684E1B5767B2049E97BC356F8F /* Pods-SimpleREST_Tests-umbrella.h */,
+				0DD0D4E391FA2C022D8E304237071584 /* Pods-SimpleREST_Tests.debug.xcconfig */,
+				E6C15D293B26D7D58DD5D203244B6F4C /* Pods-SimpleREST_Tests.release.xcconfig */,
+			);
+			name = "Pods-SimpleREST_Tests";
+			path = "Target Support Files/Pods-SimpleREST_Tests";
+			sourceTree = "<group>";
+		};
+		710804871F9B70D400B37F5B /* Cache */ = {
+			isa = PBXGroup;
+			children = (
+				710804891F9B70F300B37F5B /* Cache.swift */,
+				7108048A1F9B70F400B37F5B /* CachedWebClient.swift */,
+				710804881F9B70F300B37F5B /* CacheItem.swift */,
+			);
+			name = Cache;
+			sourceTree = "<group>";
+		};
+		76CE48A9E877899F231E5FA9E929AE88 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				CC85B0BD2272970DBBBD811BB4E8F300 /* SimpleREST */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				76CE48A9E877899F231E5FA9E929AE88 /* Development Pods */,
+				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
+				A56C8E037A9AB81077183724EF82A70F /* Products */,
+				B35A91226DD95A133A50B9A5A6216A12 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		937BBC652C8336B4E5B2625BFE63D236 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				988BD01ADEF9894907D41E542AC9FA02 /* Info.plist */,
+				AD2878903787AACBD9363E423A0B9F1C /* SimpleREST.modulemap */,
+				FDC70713471BB8C66713CC6B8B3867F2 /* SimpleREST.xcconfig */,
+				FD8DC6A073434DC6DEC0208997EAD582 /* SimpleREST-dummy.m */,
+				EADCE13EDA8BBD8EA81F84CB4D3A0C3C /* SimpleREST-prefix.pch */,
+				C04EAFF6CF8512EB00BCC22299BDC5A8 /* SimpleREST-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/SimpleREST";
+			sourceTree = "<group>";
+		};
+		A56C8E037A9AB81077183724EF82A70F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8395AE13C0ED04BF299C3171FECAECD3 /* Pods_SimpleREST_Example.framework */,
+				6160391B973D2792A3128A3863234565 /* Pods_SimpleREST_Tests.framework */,
+				18EF8508F89FF3EAAF88A3427DFA39D4 /* SimpleREST.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B35A91226DD95A133A50B9A5A6216A12 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				F4DBFB934B8690621153D92B0C9E871D /* Pods-SimpleREST_Example */,
+				11E5B810DABFC47DBCEF7C82792A22FA /* Pods-SimpleREST_Tests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D35AF013A5F0BAD4F32504907A52519E /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC85B0BD2272970DBBBD811BB4E8F300 /* SimpleREST */ = {
+			isa = PBXGroup;
+			children = (
+				710804871F9B70D400B37F5B /* Cache */,
+				7108047A1F9B70B400B37F5B /* Path.swift */,
+				7108047C1F9B70B400B37F5B /* Reachability.swift */,
+				7108047D1F9B70B400B37F5B /* RequestMethod.swift */,
+				7108047F1F9B70B500B37F5B /* Resource.swift */,
+				7108047E1F9B70B400B37F5B /* Result.swift */,
+				710804791F9B70B400B37F5B /* WebClient.swift */,
+				7108047B1F9B70B400B37F5B /* WebError.swift */,
+				937BBC652C8336B4E5B2625BFE63D236 /* Support Files */,
+			);
+			name = SimpleREST;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		D35AF013A5F0BAD4F32504907A52519E /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		F4DBFB934B8690621153D92B0C9E871D /* Pods-SimpleREST_Example */ = {
+			isa = PBXGroup;
+			children = (
+				2E52023112E62807F93719053F2517F5 /* Info.plist */,
+				4777F23D266F5864C01CDE665E5ABA91 /* Pods-SimpleREST_Example.modulemap */,
+				5502E1067B947C3702987EA3325E9916 /* Pods-SimpleREST_Example-acknowledgements.markdown */,
+				788DD0F74A780DC479A64A3BEA8A517D /* Pods-SimpleREST_Example-acknowledgements.plist */,
+				8CB53EFB920672397F5C09E616130552 /* Pods-SimpleREST_Example-dummy.m */,
+				36082E821531ED57A1FA6D2459B121B8 /* Pods-SimpleREST_Example-frameworks.sh */,
+				EAAC54305FC5C456A936AEC69049F154 /* Pods-SimpleREST_Example-resources.sh */,
+				E96637D7413B89C38125C32C008B751D /* Pods-SimpleREST_Example-umbrella.h */,
+				086260DB7188C26868BC01625CF044D6 /* Pods-SimpleREST_Example.debug.xcconfig */,
+				18AA3527CD6A71CD87BD12B39B1D27D5 /* Pods-SimpleREST_Example.release.xcconfig */,
+			);
+			name = "Pods-SimpleREST_Example";
+			path = "Target Support Files/Pods-SimpleREST_Example";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		224FB4DB37267C0309780B029B5C52C3 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5C48ED7F290223D6D66779C155EB1975 /* SimpleREST-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2E00A5B470097AA45B138D9F7AFEF24C /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B83EFC1ACD95F84118358229FBD9843E /* Pods-SimpleREST_Example-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6B9A5119833B0CFACBB9238DFA3C66E2 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7C6A3718E47A093E6E89B70FF98E56E8 /* Pods-SimpleREST_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5CC0A882BFE298D2399F02324DA0BE15 /* Pods-SimpleREST_Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 901C58139116C6F9647DC310BC125270 /* Build configuration list for PBXNativeTarget "Pods-SimpleREST_Tests" */;
+			buildPhases = (
+				FB8489E5D41DCEE526E1A992F6A9AFBD /* Sources */,
+				2AF95DB6FD5281183163FCF5F70803EC /* Frameworks */,
+				6B9A5119833B0CFACBB9238DFA3C66E2 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-SimpleREST_Tests";
+			productName = "Pods-SimpleREST_Tests";
+			productReference = 6160391B973D2792A3128A3863234565 /* Pods_SimpleREST_Tests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		73538EE8F2D59B5C1B97E73AE5D007CE /* SimpleREST */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A16BD7D1DD454D75014ECEA27C792FAE /* Build configuration list for PBXNativeTarget "SimpleREST" */;
+			buildPhases = (
+				B341FDBD42AF7AAD7AA9A331B3B8BD11 /* Sources */,
+				67D683AB95D1242C08547DDDC665EAE1 /* Frameworks */,
+				224FB4DB37267C0309780B029B5C52C3 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SimpleREST;
+			productName = SimpleREST;
+			productReference = 18EF8508F89FF3EAAF88A3427DFA39D4 /* SimpleREST.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C40EC9399DE3EF228F9C93182A8395C3 /* Pods-SimpleREST_Example */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D843C7247ABADAE5900AD3D7F24DAE5D /* Build configuration list for PBXNativeTarget "Pods-SimpleREST_Example" */;
+			buildPhases = (
+				37691D2C0F2D21114CD8EE76C45BC88E /* Sources */,
+				687AA2422829D5E75AF439A8503A9FED /* Frameworks */,
+				2E00A5B470097AA45B138D9F7AFEF24C /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6BBECA02AC644F1EA966A854F2FA40CA /* PBXTargetDependency */,
+			);
+			name = "Pods-SimpleREST_Example";
+			productName = "Pods-SimpleREST_Example";
+			productReference = 8395AE13C0ED04BF299C3171FECAECD3 /* Pods_SimpleREST_Example.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0900;
+				TargetAttributes = {
+					73538EE8F2D59B5C1B97E73AE5D007CE = {
+						LastSwiftMigration = 0900;
+					};
+					C40EC9399DE3EF228F9C93182A8395C3 = {
+						LastSwiftMigration = 0900;
+					};
+				};
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = A56C8E037A9AB81077183724EF82A70F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C40EC9399DE3EF228F9C93182A8395C3 /* Pods-SimpleREST_Example */,
+				5CC0A882BFE298D2399F02324DA0BE15 /* Pods-SimpleREST_Tests */,
+				73538EE8F2D59B5C1B97E73AE5D007CE /* SimpleREST */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		37691D2C0F2D21114CD8EE76C45BC88E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				898148F800DBFFB588B04E363A1CB517 /* Pods-SimpleREST_Example-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B341FDBD42AF7AAD7AA9A331B3B8BD11 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				710804841F9B70C400B37F5B /* Result.swift in Sources */,
+				7108048C1F9B70F800B37F5B /* CachedWebClient.swift in Sources */,
+				7108048B1F9B70F600B37F5B /* Cache.swift in Sources */,
+				710804861F9B70C900B37F5B /* WebError.swift in Sources */,
+				710804821F9B70BF00B37F5B /* RequestMethod.swift in Sources */,
+				710804801F9B70BB00B37F5B /* Path.swift in Sources */,
+				ECEC8325870441C2D08E2111253F031F /* SimpleREST-dummy.m in Sources */,
+				710804851F9B70C600B37F5B /* WebClient.swift in Sources */,
+				710804831F9B70C200B37F5B /* Resource.swift in Sources */,
+				710804811F9B70BD00B37F5B /* Reachability.swift in Sources */,
+				7108048D1F9B70FA00B37F5B /* CacheItem.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FB8489E5D41DCEE526E1A992F6A9AFBD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EDCFB9798DEA57732F06DEB4C17DA75C /* Pods-SimpleREST_Tests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6BBECA02AC644F1EA966A854F2FA40CA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SimpleREST;
+			target = 73538EE8F2D59B5C1B97E73AE5D007CE /* SimpleREST */;
+			targetProxy = 0F2474034BD940B5F016BCD69050CFF9 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		157AF0CD5E5AB2A2E74D3B8ECD865185 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		17D576EB572D234DFAB767AE2D6486F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 086260DB7188C26868BC01625CF044D6 /* Pods-SimpleREST_Example.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SimpleREST_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SimpleREST_Example/Pods-SimpleREST_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SimpleREST_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		3400FC95B13F4A99B025724BCA63C696 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6C15D293B26D7D58DD5D203244B6F4C /* Pods-SimpleREST_Tests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SimpleREST_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SimpleREST_Tests/Pods-SimpleREST_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SimpleREST_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		449408F3389DBE8E2DAA4E7E40A31330 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18AA3527CD6A71CD87BD12B39B1D27D5 /* Pods-SimpleREST_Example.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SimpleREST_Example/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SimpleREST_Example/Pods-SimpleREST_Example.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SimpleREST_Example;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		471F5E2716EECD4DA40B94004D267BF2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDC70713471BB8C66713CC6B8B3867F2 /* SimpleREST.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SimpleREST/SimpleREST-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SimpleREST/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SimpleREST/SimpleREST.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SimpleREST;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		A8BC99BC1675873F8EF6B003CA91B0CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0DD0D4E391FA2C022D8E304237071584 /* Pods-SimpleREST_Tests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-SimpleREST_Tests/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SimpleREST_Tests/Pods-SimpleREST_Tests.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_SimpleREST_Tests;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		C6357F2A0A79183C50762849DE9124D5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FDC70713471BB8C66713CC6B8B3867F2 /* SimpleREST.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/SimpleREST/SimpleREST-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SimpleREST/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/SimpleREST/SimpleREST.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SimpleREST;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		EED546DBB23FC32035C9BDC4E22B30BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EED546DBB23FC32035C9BDC4E22B30BD /* Debug */,
+				157AF0CD5E5AB2A2E74D3B8ECD865185 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		901C58139116C6F9647DC310BC125270 /* Build configuration list for PBXNativeTarget "Pods-SimpleREST_Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A8BC99BC1675873F8EF6B003CA91B0CC /* Debug */,
+				3400FC95B13F4A99B025724BCA63C696 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A16BD7D1DD454D75014ECEA27C792FAE /* Build configuration list for PBXNativeTarget "SimpleREST" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				471F5E2716EECD4DA40B94004D267BF2 /* Debug */,
+				C6357F2A0A79183C50762849DE9124D5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D843C7247ABADAE5900AD3D7F24DAE5D /* Build configuration list for PBXNativeTarget "Pods-SimpleREST_Example" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				17D576EB572D234DFAB767AE2D6486F4 /* Debug */,
+				449408F3389DBE8E2DAA4E7E40A31330 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

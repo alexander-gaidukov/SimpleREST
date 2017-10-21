@@ -1,0 +1,6 @@
+framework module SimpleREST {
+  umbrella header "SimpleREST-umbrella.h"
+
+  export *
+  module * { export * }
+}

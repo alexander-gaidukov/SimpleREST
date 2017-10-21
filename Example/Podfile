@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SimpleREST_Example' do
+  pod 'SimpleREST', :path => '../'
+
+  target 'SimpleREST_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end

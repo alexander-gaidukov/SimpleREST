@@ -24,29 +24,49 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FriendCell" textLabel="0cW-FF-GjI" detailTextLabel="Asa-oB-lkp" style="IBUITableViewCellStyleSubtitle" id="vFa-wZ-Dvz">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="FriendCell" id="vFa-wZ-Dvz" customClass="UserCell" customModule="SimpleREST_Example" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vFa-wZ-Dvz" id="4dp-ON-R9o">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0cW-FF-GjI">
-                                                    <rect key="frame" x="15" y="5" width="33.5" height="20.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="tJE-8z-gs2">
+                                                    <rect key="frame" x="10" y="4" width="36" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="36" id="MDH-HG-eVH"/>
+                                                        <constraint firstAttribute="height" constant="36" id="mOf-Sc-4OQ"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CuZ-63-aaz">
+                                                    <rect key="frame" x="54" y="4" width="313" height="16"/>
+                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Asa-oB-lkp">
-                                                    <rect key="frame" x="15" y="25.5" width="44" height="14.5"/>
-                                                    <autoresizingMask key="autoresizingMask"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U3u-y5-cQ2">
+                                                    <rect key="frame" x="54" y="25.5" width="313" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="CuZ-63-aaz" firstAttribute="leading" secondItem="tJE-8z-gs2" secondAttribute="trailing" constant="8" id="4vI-hZ-UAj"/>
+                                                <constraint firstItem="CuZ-63-aaz" firstAttribute="top" secondItem="tJE-8z-gs2" secondAttribute="top" id="UEu-yQ-6gb"/>
+                                                <constraint firstItem="U3u-y5-cQ2" firstAttribute="bottom" secondItem="tJE-8z-gs2" secondAttribute="bottom" id="Xjv-BP-YhF"/>
+                                                <constraint firstItem="tJE-8z-gs2" firstAttribute="centerY" secondItem="4dp-ON-R9o" secondAttribute="centerY" id="ayw-UR-ATV"/>
+                                                <constraint firstItem="U3u-y5-cQ2" firstAttribute="leading" secondItem="CuZ-63-aaz" secondAttribute="leading" id="iPD-Mn-yUB"/>
+                                                <constraint firstAttribute="trailing" secondItem="CuZ-63-aaz" secondAttribute="trailing" constant="8" id="mVr-wg-ouT"/>
+                                                <constraint firstItem="U3u-y5-cQ2" firstAttribute="trailing" secondItem="CuZ-63-aaz" secondAttribute="trailing" id="oSl-wv-e6G"/>
+                                                <constraint firstItem="tJE-8z-gs2" firstAttribute="leading" secondItem="4dp-ON-R9o" secondAttribute="leading" constant="10" id="svm-Hg-Vk2"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="avatarImageView" destination="tJE-8z-gs2" id="yAu-Jk-EJt"/>
+                                            <outlet property="emailLabel" destination="U3u-y5-cQ2" id="JIP-X9-e2k"/>
+                                            <outlet property="nameLabel" destination="CuZ-63-aaz" id="3Kf-xs-MNP"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -66,9 +86,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="5mK-nk-Q2f">
+                        <barButtonItem key="leftBarButtonItem" title="Error" id="Ywd-gx-Rzu">
+                            <connections>
+                                <action selector="loadError" destination="vXZ-lx-hvc" id="Aix-TB-bEN"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="NQw-5x-jdx">
                             <connections>
-                                <action selector="loadFriends" destination="vXZ-lx-hvc" id="1AG-jF-rAO"/>
+                                <action selector="refreshTapped" destination="vXZ-lx-hvc" id="uBi-p2-yIB"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>

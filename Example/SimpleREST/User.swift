@@ -12,6 +12,7 @@ struct User: Decodable {
     var id: String
     var email: String
     var name: String
+    var avatarPath: String
 }
 
 struct FriendsResponse: Decodable {

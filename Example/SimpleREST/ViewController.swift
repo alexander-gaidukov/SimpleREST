@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SimpleREST
 
 class ViewController: UIViewController {
     
@@ -27,7 +28,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.tableFooterView = UIView(frame: .zero)
-        loadFriends()
+        loadFriends(error: false)
     }
     
     private func showErrorAlert(with message: String) {
@@ -54,12 +55,14 @@ class ViewController: UIViewController {
         }
     }
     
-    @IBAction private func loadFriends() {
+    private func loadFriends(error: Bool) {
         friendsTask?.cancel()
         
         activityIndicator.startAnimating()
         
-        let friensResource = Resource<FriendsResponse, CustomError>(jsonDecoder: JSONDecoder(), path: "/59e8956d0f00000708aefb59")
+        let path = error ? "/59edcc8e3300005600b5c6ff" : "/59edce833300004f00b5c708"
+        
+        let friensResource = Resource<FriendsResponse, CustomError>(jsonDecoder: JSONDecoder(), path: path)
         
         friendsTask = ViewController.sharedWebClient.load(resource: friensResource) {[weak self] response in
             
@@ -77,6 +80,14 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction private func refreshTapped() {
+        loadFriends(error: false)
+    }
+    
+    @IBAction private func loadError() {
+        loadFriends(error: true)
+    }
+    
     private func updateUI() {
         tableView.reloadData()
     }
@@ -88,10 +99,9 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "FriendCell", for: indexPath) as! UserCell
         let friend = friends[indexPath.row]
-        cell.textLabel?.text = friend.name
-        cell.detailTextLabel?.text = friend.email
+        cell.configure(user: friend)
         return cell
     }
 }

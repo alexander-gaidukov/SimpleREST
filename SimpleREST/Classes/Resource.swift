@@ -10,8 +10,8 @@ import Foundation
 public struct Resource<A, CustomError> {
     let path: Path
     let method: RequestMethod
-    var headers: HTTPHeaders
     var params: JSON
+    var headers: HTTPHeaders
     let parse: (Data) -> A?
     let parseError: (Data) -> CustomError?
 }
@@ -22,7 +22,7 @@ extension Resource {
          params: JSON = [:],
          headers: HTTPHeaders = [:],
          parse: @escaping (Data) -> A?,
-         parseError: @escaping (Data) -> CustomError?) {
+         parseError: @escaping (Data) -> CustomError? = {_ in return nil}) {
         
         self.path = Path(path)
         self.method = method

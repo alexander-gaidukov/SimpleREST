@@ -12,7 +12,7 @@ open class CachedWebClient {
     
     private let webClient: WebClient
     
-    init(webClient: WebClient) {
+    public init(webClient: WebClient) {
         self.webClient = webClient
     }
     

@@ -46,6 +46,7 @@ open class WebClient {
     private var baseUrl: String
     
     public var commonParams: JSON = [:]
+    public var commonHeaders: HTTPHeaders = [:]
     
     public init(baseUrl: String) {
         self.baseUrl = baseUrl
@@ -61,6 +62,9 @@ open class WebClient {
         
         var newResouce = resource
         newResouce.params = newResouce.params.merging(commonParams) { spec, common in
+            return spec
+        }
+        newResouce.headers = newResouce.headers.merging(commonHeaders) {spec, common in
             return spec
         }
         

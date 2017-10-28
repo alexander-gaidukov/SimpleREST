@@ -39,11 +39,11 @@ let task = webClient.load(resource: resource) { response in
 task?.cancel()
 ```
 
-### Codable objects (iOS 11)
+### Codable objects
 If your Object and CustomError conform to `Codable` protocol you can create a `Resource` object in a simpler way
 
 ```swift
-let resource = Resource<Object, CustomError>(path: "/resource_path",
+let resource = Resource<Object, CustomError>(jsonDecoder: JSONDecoder(), path: "/resource_path",
 method: .get,
 params: ["param1": "value1", "param2": "value2"],
 headers: ["headerField1": "value1"])

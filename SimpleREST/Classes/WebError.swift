@@ -11,5 +11,6 @@ public enum WebError<CustomError>: Error {
     case noInternetConnection
     case custom(CustomError)
     case unauthorized
-    case other
+    case wrongDataFormat
+    case other(Int, Error?)
 }

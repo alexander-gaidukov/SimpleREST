@@ -22,7 +22,7 @@ open class CachedWebClient {
                               completion: @escaping (Result<A, CustomError>) ->()) -> URLSessionDataTask? {
 
         if !forceUpdate, let object = Cache.shared.load(forResource: resource)  {
-            completion(Result(value: object, or: .other))
+            completion(.success(object))
             return nil
         }
         
@@ -35,7 +35,7 @@ open class CachedWebClient {
                     Cache.shared.save(data, forResource: resource, aliveDuration: cacheAliveDuration)
                     completion(.success(value))
                 } else {
-                    completion(.failure(.other))
+                    completion(.failure(.wrongDataFormat))
                 }
             case .failure(let error):
                 completion(.failure(error))

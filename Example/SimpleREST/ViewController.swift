@@ -48,8 +48,10 @@ class ViewController: UIViewController {
             showErrorAlert(with: "The internet connection is lost")
         case .unauthorized:
             moveToLogin()
-        case .other:
-            showErrorAlert(with: "Unfortunately something went wrong")
+        case .other(let code, let error):
+            showErrorAlert(with: "Unfortunately something went wrong. Code:\(code). Description: \(error?.localizedDescription ?? "")")
+        case .wrongDataFormat:
+            showErrorAlert(with: "Wrong response format")
         case .custom(let error):
             showErrorAlert(with: error.message)
         }

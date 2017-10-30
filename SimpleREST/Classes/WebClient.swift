@@ -70,19 +70,17 @@ open class WebClient {
         
         let request = URLRequest(baseUrl: baseUrl, resource: newResouce)
         
-        let task = URLSession.shared.dataTask(with: request) { data, response, _ in
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
             // Parsing incoming data
-            guard let response = response as? HTTPURLResponse else {
-                completion(.failure(.other))
-                return
-            }
+            let httpResponse = response as! HTTPURLResponse
             
-            if (200..<300) ~= response.statusCode {
-                completion(Result(value: data.flatMap(resource.parse), or: .other))
-            } else if response.statusCode == 401 {
+            if (200..<300) ~= httpResponse.statusCode {
+                completion(Result(value: data.flatMap(resource.parse), or: .wrongDataFormat))
+            } else if httpResponse.statusCode == 401 {
                 completion(.failure(.unauthorized))
             } else {
-                completion(.failure(data.flatMap(resource.parseError).map({.custom($0)}) ?? .other))
+                let err = data.flatMap(resource.parseError).map({ WebError.custom($0) }) ?? WebError.other(httpResponse.statusCode, error)
+                completion(.failure(err))
             }
         }
         

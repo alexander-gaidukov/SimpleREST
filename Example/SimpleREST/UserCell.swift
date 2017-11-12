@@ -11,7 +11,7 @@ import SimpleREST
 
 class UserCell: UITableViewCell {
     
-    static let cahedWebClient = CachedWebClient(webClient: WebClient(baseUrl: "http://www.iconsfind.com/wp-content/uploads"))
+    static let cahedWebClient = CachedWebClient(webClient: WebClient(baseUrl: "https://cdn1.iconfinder.com/data/icons/user-pictures"))
     
     @IBOutlet private weak var avatarImageView: UIImageView!
     @IBOutlet private weak var nameLabel: UILabel!

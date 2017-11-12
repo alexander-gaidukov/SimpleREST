@@ -62,7 +62,7 @@ class ViewController: UIViewController {
         
         activityIndicator.startAnimating()
         
-        let path = error ? "/59edcc8e3300005600b5c6ff" : "/59edce833300004f00b5c708"
+        let path = error ? "/59edcc8e3300005600b5c6ff" : "/5a07ff0f2f0000ef16e61108"
         
         let friensResource = Resource<FriendsResponse, CustomError>(jsonDecoder: JSONDecoder(), path: path)
         

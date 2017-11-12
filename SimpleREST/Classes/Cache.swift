@@ -18,7 +18,7 @@ extension Resource {
     }
 }
 
-final class Cache {
+public final class Cache {
     
     static let shared: Cache = Cache()
     
@@ -33,6 +33,10 @@ final class Cache {
     }
     
     @objc func clearSessionCache() {
+        clear()
+    }
+    
+    public func clear() {
         sessionCache.removeAllObjects()
     }
     
@@ -52,11 +56,11 @@ final class Cache {
         return resource.parse(cacheItem.data)
     }
     
-    func save<A, E>(_ data: Data, forResource resource: Resource<A, E>, aliveDuration: TimeInterval? = nil) {
+    func save<A, E>(_ data: Data, forResource resource: Resource<A, E>, type: CacheType = .permanent) {
         
         guard resource.method == .get else { return }
         
-        let cacheItem = CacheItem(data: data, aliveTill: aliveDuration.flatMap({ Date().addingTimeInterval($0) }))
+        let cacheItem = CacheItem(data: data, type: type)
         
         sessionCache.setObject(cacheItem, forKey: resource.cacheKey as AnyObject)
     }

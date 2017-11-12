@@ -61,11 +61,16 @@ webClient.commonHeaders["access_token"] = "12345"
 let cahedWebClient = CachedWebClient(webClient: webClient)
 let task = cahedWebClient.load(resource: resource,
 forceUpdate = true (if you want to invalidate cache), false by default
-cacheAliveDuration = time interval or nil for permanent cache, nil by default
+cacheType = .permanent or .temporary(TimeInterval), .permanent by default
 ) { response in
 
 }
 ```
+If you need to clear cache storage use the following command:
+```swift
+Cache.clear()
+```
+
 ## Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.

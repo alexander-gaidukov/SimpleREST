@@ -33,11 +33,11 @@ public final class Cache {
     }
     
     @objc func clearSessionCache() {
-        clear()
+        Cache.clear()
     }
     
-    public func clear() {
-        sessionCache.removeAllObjects()
+    public static func clear() {
+        shared.sessionCache.removeAllObjects()
     }
     
     func load<A, E>(forResource resource: Resource<A, E>) -> A? {

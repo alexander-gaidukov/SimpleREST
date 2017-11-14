@@ -46,6 +46,8 @@ class ViewController: UIViewController {
         switch error {
         case .noInternetConnection:
             showErrorAlert(with: "The internet connection is lost")
+        case .serverUnavailable:
+            showErrorAlert(with: "The server is unavailable")
         case .unauthorized:
             moveToLogin()
         case .other(let code, let error):

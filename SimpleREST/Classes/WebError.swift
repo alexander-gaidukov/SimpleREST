@@ -9,6 +9,7 @@ import Foundation
 
 public enum WebError<CustomError>: Error {
     case noInternetConnection
+    case serverUnavailable
     case custom(CustomError)
     case unauthorized
     case wrongDataFormat

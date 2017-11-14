@@ -71,8 +71,15 @@ open class WebClient {
         let request = URLRequest(baseUrl: baseUrl, resource: newResouce)
         
         let task = URLSession.shared.dataTask(with: request) { data, response, error in
-            // Parsing incoming data
-            let httpResponse = response as! HTTPURLResponse
+            
+            guard error?.localizedDescription != "cancelled" else {
+                return
+            }
+            
+            guard let httpResponse = response as? HTTPURLResponse else {
+                completion(.failure(.serverUnavailable))
+                return
+            }
             
             if (200..<300) ~= httpResponse.statusCode {
                 completion(Result(value: data.flatMap(resource.parse), or: .wrongDataFormat))

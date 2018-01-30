@@ -70,6 +70,11 @@ If you need to clear cache storage use the following command:
 ```swift
 Cache.clear()
 ```
+You can also clear cache for specific resource or url path:
+```swift
+Cache.clear(forResource:)
+Cache.clear(forPath:)
+```
 
 ## Example
 

@@ -18,11 +18,35 @@ extension Resource {
     }
 }
 
+private final class SRCache: NSCache<AnyObject, AnyObject> {
+    
+    private(set) var keys: Set<String> = []
+    
+    override func removeAllObjects() {
+        super.removeAllObjects()
+        keys.removeAll()
+    }
+    
+    override func setObject(_ obj: AnyObject, forKey key: AnyObject) {
+        super.setObject(obj, forKey: key)
+        if let key  = key as? String {
+            keys.insert(key)
+        }
+    }
+    
+    override func removeObject(forKey key: AnyObject) {
+        super.removeObject(forKey: key)
+        if let key = key as? String {
+            keys.remove(key)
+        }
+    }
+}
+
 public final class Cache {
     
     static let shared: Cache = Cache()
     
-    private var sessionCache: NSCache<AnyObject, CacheItem> = NSCache<AnyObject, CacheItem>()
+    private var sessionCache: SRCache = SRCache()
     
     private init() {
         NotificationCenter.default.addObserver(self, selector: #selector(Cache.clearSessionCache), name: NSNotification.Name.UIApplicationDidReceiveMemoryWarning, object: nil)
@@ -40,11 +64,22 @@ public final class Cache {
         shared.sessionCache.removeAllObjects()
     }
     
+    public static func clear<A, E>(forResource resource: Resource<A, E>) {
+        shared.sessionCache.removeObject(forKey: resource.cacheKey as AnyObject)
+    }
+    
+    public static func clear(forPath path: String) {
+        let newPath = path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
+        shared.sessionCache.keys.filter({ $0.contains(newPath) }).forEach {
+            shared.sessionCache.removeObject(forKey: $0 as AnyObject)
+        }
+    }
+    
     func load<A, E>(forResource resource: Resource<A, E>) -> A? {
         
         guard resource.method == .get else { return nil }
         
-        guard let cacheItem = (sessionCache.object(forKey: resource.cacheKey as AnyObject)) else {
+        guard let cacheItem = (sessionCache.object(forKey: resource.cacheKey as AnyObject)) as? CacheItem else {
             return nil
         }
         

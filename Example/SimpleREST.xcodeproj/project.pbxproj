@@ -14,9 +14,7 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		710804901F9B71E100B37F5B /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108048F1F9B71E100B37F5B /* User.swift */; };
-		710804921F9B720D00B37F5B /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710804911F9B720D00B37F5B /* CustomError.swift */; };
-		71EAC0C01F9E0788009C2480 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71EAC0BF1F9E0788009C2480 /* UserCell.swift */; };
+		71A5625822E7A8630077523B /* SimpleRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5625722E7A8630077523B /* SimpleRequestViewController.swift */; };
 		C94700FF36B06D17500B767B /* Pods_SimpleREST_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5017CB2E90D4B862D0F751 /* Pods_SimpleREST_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -46,9 +44,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		65793CE2BFA99A4473799BD4 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		70EE6E2A991D927BF6106383 /* SimpleREST.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SimpleREST.podspec; path = ../SimpleREST.podspec; sourceTree = "<group>"; };
-		7108048F1F9B71E100B37F5B /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		710804911F9B720D00B37F5B /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
-		71EAC0BF1F9E0788009C2480 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		71A5625722E7A8630077523B /* SimpleRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleRequestViewController.swift; sourceTree = "<group>"; };
 		8A5017CB2E90D4B862D0F751 /* Pods_SimpleREST_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleREST_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2FA4326B127241EE1BFF13 /* Pods-SimpleREST_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleREST_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleREST_Example/Pods-SimpleREST_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D8363DDC8ED31F9F6C7DB062 /* Pods_SimpleREST_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleREST_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -99,10 +95,9 @@
 		607FACD21AFB9204008FA782 /* Example for SimpleREST */ = {
 			isa = PBXGroup;
 			children = (
-				7108048E1F9B719D00B37F5B /* Model */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
-				71EAC0BF1F9E0788009C2480 /* UserCell.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				71A5625722E7A8630077523B /* SimpleRequestViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -154,15 +149,6 @@
 				8A5017CB2E90D4B862D0F751 /* Pods_SimpleREST_Tests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		7108048E1F9B719D00B37F5B /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				7108048F1F9B71E100B37F5B /* User.swift */,
-				710804911F9B720D00B37F5B /* CustomError.swift */,
-			);
-			name = Model;
 			sourceTree = "<group>";
 		};
 		825883FE39637FB7D133F98B /* Pods */ = {
@@ -247,6 +233,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
@@ -388,11 +375,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				71A5625822E7A8630077523B /* SimpleRequestViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
-				710804921F9B720D00B37F5B /* CustomError.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
-				71EAC0C01F9E0788009C2480 /* UserCell.swift in Sources */,
-				710804901F9B71E100B37F5B /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

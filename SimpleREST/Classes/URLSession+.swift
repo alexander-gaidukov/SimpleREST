@@ -30,6 +30,7 @@ extension URLRequest {
         resource.headers.forEach { setValue(String(describing: $0.value), forHTTPHeaderField: $0.key) }
         setValue("application/json", forHTTPHeaderField: "Accept")
         setValue(resource.method.body?.contentType(boundary: boundary) ?? "application/json", forHTTPHeaderField: "Content-Type")
+        cachePolicy = .reloadIgnoringLocalAndRemoteCacheData
     }
     
     private func createBoundary() -> String {
@@ -40,7 +41,6 @@ extension URLRequest {
 extension URLSession {
     @discardableResult
     public func load<A, E: Error>(resource: Resource<A, E>, completion: @escaping (Result<A, HTTPError<E>>) -> ()) -> URLSessionDataTask? {
-        
         if let cachedItem = HTTPCache.shared.item(for: resource) {
             completion(resource.parse(cachedItem.value).map{ .success($0) } ?? .failure(.responseParseError))
             return nil

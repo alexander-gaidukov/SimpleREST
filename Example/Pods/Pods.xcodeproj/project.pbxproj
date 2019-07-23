@@ -8,16 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		5C48ED7F290223D6D66779C155EB1975 /* SimpleREST-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C04EAFF6CF8512EB00BCC22299BDC5A8 /* SimpleREST-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		710804801F9B70BB00B37F5B /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108047A1F9B70B400B37F5B /* Path.swift */; };
-		710804811F9B70BD00B37F5B /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108047C1F9B70B400B37F5B /* Reachability.swift */; };
-		710804821F9B70BF00B37F5B /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108047D1F9B70B400B37F5B /* RequestMethod.swift */; };
+		710804821F9B70BF00B37F5B /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108047D1F9B70B400B37F5B /* HTTPMethod.swift */; };
 		710804831F9B70C200B37F5B /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108047F1F9B70B500B37F5B /* Resource.swift */; };
-		710804841F9B70C400B37F5B /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108047E1F9B70B400B37F5B /* Result.swift */; };
-		710804851F9B70C600B37F5B /* WebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710804791F9B70B400B37F5B /* WebClient.swift */; };
-		710804861F9B70C900B37F5B /* WebError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108047B1F9B70B400B37F5B /* WebError.swift */; };
 		7108048B1F9B70F600B37F5B /* Cache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710804891F9B70F300B37F5B /* Cache.swift */; };
-		7108048C1F9B70F800B37F5B /* CachedWebClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7108048A1F9B70F400B37F5B /* CachedWebClient.swift */; };
 		7108048D1F9B70FA00B37F5B /* CacheItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710804881F9B70F300B37F5B /* CacheItem.swift */; };
+		710CFD2C22E7577000030D12 /* HTTPError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710CFD2822E7577000030D12 /* HTTPError.swift */; };
+		710CFD2D22E7577000030D12 /* CombinedResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710CFD2922E7577000030D12 /* CombinedResource.swift */; };
+		710CFD2E22E7577000030D12 /* URLSession+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710CFD2A22E7577000030D12 /* URLSession+.swift */; };
+		710CFD2F22E7577000030D12 /* Attachment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 710CFD2B22E7577000030D12 /* Attachment.swift */; };
 		7C6A3718E47A093E6E89B70FF98E56E8 /* Pods-SimpleREST_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = C27311684E1B5767B2049E97BC356F8F /* Pods-SimpleREST_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		898148F800DBFFB588B04E363A1CB517 /* Pods-SimpleREST_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8CB53EFB920672397F5C09E616130552 /* Pods-SimpleREST_Example-dummy.m */; };
 		945ACB959FB5934A0DDC251C2937D39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */; };
@@ -54,16 +52,14 @@
 		6160391B973D2792A3128A3863234565 /* Pods_SimpleREST_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleREST_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6604A7D69453B4569E4E4827FB9155A9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		6D194B4258644CB621D39CCC06B3C872 /* Pods-SimpleREST_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SimpleREST_Tests-frameworks.sh"; sourceTree = "<group>"; };
-		710804791F9B70B400B37F5B /* WebClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebClient.swift; path = SimpleREST/Classes/WebClient.swift; sourceTree = "<group>"; };
-		7108047A1F9B70B400B37F5B /* Path.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Path.swift; path = SimpleREST/Classes/Path.swift; sourceTree = "<group>"; };
-		7108047B1F9B70B400B37F5B /* WebError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = WebError.swift; path = SimpleREST/Classes/WebError.swift; sourceTree = "<group>"; };
-		7108047C1F9B70B400B37F5B /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Reachability.swift; path = SimpleREST/Classes/Reachability.swift; sourceTree = "<group>"; };
-		7108047D1F9B70B400B37F5B /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = RequestMethod.swift; path = SimpleREST/Classes/RequestMethod.swift; sourceTree = "<group>"; };
-		7108047E1F9B70B400B37F5B /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Result.swift; path = SimpleREST/Classes/Result.swift; sourceTree = "<group>"; };
+		7108047D1F9B70B400B37F5B /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HTTPMethod.swift; path = SimpleREST/Classes/HTTPMethod.swift; sourceTree = "<group>"; };
 		7108047F1F9B70B500B37F5B /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Resource.swift; path = SimpleREST/Classes/Resource.swift; sourceTree = "<group>"; };
 		710804881F9B70F300B37F5B /* CacheItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CacheItem.swift; path = SimpleREST/Classes/CacheItem.swift; sourceTree = "<group>"; };
 		710804891F9B70F300B37F5B /* Cache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cache.swift; path = SimpleREST/Classes/Cache.swift; sourceTree = "<group>"; };
-		7108048A1F9B70F400B37F5B /* CachedWebClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CachedWebClient.swift; path = SimpleREST/Classes/CachedWebClient.swift; sourceTree = "<group>"; };
+		710CFD2822E7577000030D12 /* HTTPError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HTTPError.swift; path = SimpleREST/Classes/HTTPError.swift; sourceTree = "<group>"; };
+		710CFD2922E7577000030D12 /* CombinedResource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CombinedResource.swift; path = SimpleREST/Classes/CombinedResource.swift; sourceTree = "<group>"; };
+		710CFD2A22E7577000030D12 /* URLSession+.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "URLSession+.swift"; path = "SimpleREST/Classes/URLSession+.swift"; sourceTree = "<group>"; };
+		710CFD2B22E7577000030D12 /* Attachment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Attachment.swift; path = SimpleREST/Classes/Attachment.swift; sourceTree = "<group>"; };
 		788DD0F74A780DC479A64A3BEA8A517D /* Pods-SimpleREST_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SimpleREST_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		81887B3B4E047494EAFA9FCE041DD61D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8395AE13C0ED04BF299C3171FECAECD3 /* Pods_SimpleREST_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleREST_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -132,7 +128,6 @@
 			isa = PBXGroup;
 			children = (
 				710804891F9B70F300B37F5B /* Cache.swift */,
-				7108048A1F9B70F400B37F5B /* CachedWebClient.swift */,
 				710804881F9B70F300B37F5B /* CacheItem.swift */,
 			);
 			name = Cache;
@@ -202,13 +197,12 @@
 			isa = PBXGroup;
 			children = (
 				710804871F9B70D400B37F5B /* Cache */,
-				7108047A1F9B70B400B37F5B /* Path.swift */,
-				7108047C1F9B70B400B37F5B /* Reachability.swift */,
-				7108047D1F9B70B400B37F5B /* RequestMethod.swift */,
+				7108047D1F9B70B400B37F5B /* HTTPMethod.swift */,
 				7108047F1F9B70B500B37F5B /* Resource.swift */,
-				7108047E1F9B70B400B37F5B /* Result.swift */,
-				710804791F9B70B400B37F5B /* WebClient.swift */,
-				7108047B1F9B70B400B37F5B /* WebError.swift */,
+				710CFD2B22E7577000030D12 /* Attachment.swift */,
+				710CFD2922E7577000030D12 /* CombinedResource.swift */,
+				710CFD2822E7577000030D12 /* HTTPError.swift */,
+				710CFD2A22E7577000030D12 /* URLSession+.swift */,
 				937BBC652C8336B4E5B2625BFE63D236 /* Support Files */,
 			);
 			name = SimpleREST;
@@ -336,7 +330,7 @@
 						LastSwiftMigration = 0900;
 					};
 					C40EC9399DE3EF228F9C93182A8395C3 = {
-						LastSwiftMigration = 0900;
+						LastSwiftMigration = 1020;
 					};
 				};
 			};
@@ -345,6 +339,7 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
@@ -372,16 +367,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				710804841F9B70C400B37F5B /* Result.swift in Sources */,
-				7108048C1F9B70F800B37F5B /* CachedWebClient.swift in Sources */,
 				7108048B1F9B70F600B37F5B /* Cache.swift in Sources */,
-				710804861F9B70C900B37F5B /* WebError.swift in Sources */,
-				710804821F9B70BF00B37F5B /* RequestMethod.swift in Sources */,
-				710804801F9B70BB00B37F5B /* Path.swift in Sources */,
+				710CFD2E22E7577000030D12 /* URLSession+.swift in Sources */,
+				710804821F9B70BF00B37F5B /* HTTPMethod.swift in Sources */,
+				710CFD2F22E7577000030D12 /* Attachment.swift in Sources */,
 				ECEC8325870441C2D08E2111253F031F /* SimpleREST-dummy.m in Sources */,
-				710804851F9B70C600B37F5B /* WebClient.swift in Sources */,
 				710804831F9B70C200B37F5B /* Resource.swift in Sources */,
-				710804811F9B70BD00B37F5B /* Reachability.swift in Sources */,
+				710CFD2D22E7577000030D12 /* CombinedResource.swift in Sources */,
+				710CFD2C22E7577000030D12 /* HTTPError.swift in Sources */,
 				7108048D1F9B70FA00B37F5B /* CacheItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

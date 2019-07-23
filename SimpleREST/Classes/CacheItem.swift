@@ -8,22 +8,7 @@
 
 import Foundation
 
-public enum CacheType {
-    case permanent
-    case temporary(TimeInterval)
-}
-
-final class CacheItem {
-    var data: Data
-    var aliveTill: Date?
-    
-    init(data: Data, type: CacheType) {
-        self.data = data
-        switch type {
-        case .permanent:
-            self.aliveTill = nil
-        case .temporary(let interval):
-            self.aliveTill = Date().addingTimeInterval(interval)
-        }
-    }
+struct CacheItem {
+    let value: Data
+    let expirationDate: Date?
 }

@@ -6,97 +6,41 @@
 //  Copyright © 2017 Alexander Gaidukov. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
-extension Resource {
-    var cacheKey: String {
-        var result = "cache_" + path.absolutePath + "_"
-        for key in params.keys.sorted() {
-            result += "\(key)=\(String(describing: params[key]))"
-        }
-        return result
-    }
-}
-
-private final class SRCache: NSCache<AnyObject, AnyObject> {
-    
-    private(set) var keys: Set<String> = []
-    
-    override func removeAllObjects() {
-        super.removeAllObjects()
-        keys.removeAll()
-    }
-    
-    override func setObject(_ obj: AnyObject, forKey key: AnyObject) {
-        super.setObject(obj, forKey: key)
-        if let key  = key as? String {
-            keys.insert(key)
-        }
-    }
-    
-    override func removeObject(forKey key: AnyObject) {
-        super.removeObject(forKey: key)
-        if let key = key as? String {
-            keys.remove(key)
-        }
-    }
-}
-
-public final class Cache {
-    
-    static let shared: Cache = Cache()
-    
-    private var sessionCache: SRCache = SRCache()
+public final class HTTPCache {
+    public static let shared = HTTPCache()
+    private var cache: [String: CacheItem] = [:]
     
     private init() {
-        NotificationCenter.default.addObserver(self, selector: #selector(Cache.clearSessionCache), name: NSNotification.Name.UIApplicationDidReceiveMemoryWarning, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(clear), name: Notification.Name.UIApplicationDidReceiveMemoryWarning, object: nil)
     }
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
+    public func save<A, E: Error>(data: Data, for resource: Resource<A, E>) {
+        guard let cacheConfiguration = resource.cacheConfiguration else { return }
+        let item = CacheItem(value: data, expirationDate: cacheConfiguration.liveTime.map { Date(timeIntervalSinceNow: $0) })
+        cache[cacheConfiguration.key] = item
     }
     
-    @objc func clearSessionCache() {
-        Cache.clear()
+    public func clearCache<A, E: Error>(for resource: Resource<A, E>) {
+        guard let key = resource.cacheConfiguration?.key else { return }
+        cache.removeValue(forKey: key)
     }
     
-    public static func clear() {
-        shared.sessionCache.removeAllObjects()
+    @objc public func clear() {
+        cache.removeAll()
     }
     
-    public static func clear<A, E>(forResource resource: Resource<A, E>) {
-        shared.sessionCache.removeObject(forKey: resource.cacheKey as AnyObject)
-    }
-    
-    public static func clear(forPath path: String) {
-        let newPath = path.trimmingCharacters(in: CharacterSet(charactersIn: "/"))
-        shared.sessionCache.keys.filter({ $0.contains(newPath) }).forEach {
-            shared.sessionCache.removeObject(forKey: $0 as AnyObject)
-        }
-    }
-    
-    func load<A, E>(forResource resource: Resource<A, E>) -> A? {
-        
-        guard resource.method == .get else { return nil }
-        
-        guard let cacheItem = (sessionCache.object(forKey: resource.cacheKey as AnyObject)) as? CacheItem else {
+    func item<A, E: Error>(for resource: Resource<A, E>) -> CacheItem? {
+        guard let key = resource.cacheConfiguration?.key, let item = cache[key] else {
             return nil
         }
         
-        if let aliveTill = cacheItem.aliveTill, aliveTill.compare(Date()) == .orderedAscending {
-            sessionCache.removeObject(forKey: cacheItem)
+        if let expirationDate = item.expirationDate, expirationDate < Date() {
+            cache.removeValue(forKey: key)
             return nil
         }
         
-        return resource.parse(cacheItem.data)
-    }
-    
-    func save<A, E>(_ data: Data, forResource resource: Resource<A, E>, type: CacheType = .permanent) {
-        
-        guard resource.method == .get else { return }
-        
-        let cacheItem = CacheItem(data: data, type: type)
-        
-        sessionCache.setObject(cacheItem, forKey: resource.cacheKey as AnyObject)
+        return item
     }
 }

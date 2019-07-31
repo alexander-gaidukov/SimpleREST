@@ -21,10 +21,6 @@ struct Country: Decodable {
                                             decoder: JSONDecoder())
 }
 
-struct APIError: Error, Decodable {
-    let message: String
-}
-
 final class SimpleRequestViewController: UIViewController {
     @IBOutlet private weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet private weak var tableView: UITableView!

@@ -16,6 +16,7 @@
 		7109C93422F1D49000194658 /* CachingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7109C93322F1D49000194658 /* CachingViewController.swift */; };
 		7109C93622F1D4BD00194658 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7109C93522F1D4BD00194658 /* APIError.swift */; };
 		71A5625822E7A8630077523B /* SimpleRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5625722E7A8630077523B /* SimpleRequestViewController.swift */; };
+		71E1202C22F31545005E1E13 /* CombinedResourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1202B22F31545005E1E13 /* CombinedResourceViewController.swift */; };
 		C94700FF36B06D17500B767B /* Pods_SimpleREST_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5017CB2E90D4B862D0F751 /* Pods_SimpleREST_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,7 @@
 		7109C93322F1D49000194658 /* CachingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingViewController.swift; sourceTree = "<group>"; };
 		7109C93522F1D4BD00194658 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		71A5625722E7A8630077523B /* SimpleRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleRequestViewController.swift; sourceTree = "<group>"; };
+		71E1202B22F31545005E1E13 /* CombinedResourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedResourceViewController.swift; sourceTree = "<group>"; };
 		8A5017CB2E90D4B862D0F751 /* Pods_SimpleREST_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleREST_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB2FA4326B127241EE1BFF13 /* Pods-SimpleREST_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SimpleREST_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-SimpleREST_Example/Pods-SimpleREST_Example.release.xcconfig"; sourceTree = "<group>"; };
 		D8363DDC8ED31F9F6C7DB062 /* Pods_SimpleREST_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleREST_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,6 +103,7 @@
 				7109C93522F1D4BD00194658 /* APIError.swift */,
 				71A5625722E7A8630077523B /* SimpleRequestViewController.swift */,
 				7109C93322F1D49000194658 /* CachingViewController.swift */,
+				71E1202B22F31545005E1E13 /* CombinedResourceViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -381,6 +384,7 @@
 				71A5625822E7A8630077523B /* SimpleRequestViewController.swift in Sources */,
 				7109C93622F1D4BD00194658 /* APIError.swift in Sources */,
 				7109C93422F1D49000194658 /* CachingViewController.swift in Sources */,
+				71E1202C22F31545005E1E13 /* CombinedResourceViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

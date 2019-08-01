@@ -39,7 +39,7 @@ final class CachingViewController: UIViewController {
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: .zero)
         tableView.estimatedRowHeight = 60
-        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.rowHeight = UITableView.automaticDimension
         loadNews()
     }
     

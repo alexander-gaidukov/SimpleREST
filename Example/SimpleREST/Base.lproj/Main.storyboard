@@ -9,6 +9,58 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Multipart-->
+        <scene sceneID="I4Q-GR-xfx">
+            <objects>
+                <viewController id="oVP-Rv-Uha" customClass="MultipartRequestViewController" customModule="SimpleREST_Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uvk-EQ-mHv"/>
+                        <viewControllerLayoutGuide type="bottom" id="HUp-BA-KLm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="qFN-8f-iui">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dVD-C5-q4m">
+                                <rect key="frame" x="0.0" y="64" width="375" height="187.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="dVD-C5-q4m" secondAttribute="height" multiplier="2:1" id="bQL-VI-9LX"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hKg-bH-uxU">
+                                <rect key="frame" x="140" y="261.5" width="95" height="30"/>
+                                <state key="normal" title="Analyze Color"/>
+                                <connections>
+                                    <action selector="buttonTapped" destination="oVP-Rv-Uha" eventType="touchUpInside" id="Erd-wZ-Sjl"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="kdv-CV-8o5">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                                <color key="color" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hKg-bH-uxU" firstAttribute="centerX" secondItem="qFN-8f-iui" secondAttribute="centerX" id="JOy-hn-UbL"/>
+                            <constraint firstAttribute="trailing" secondItem="dVD-C5-q4m" secondAttribute="trailing" id="Tba-RR-ZV9"/>
+                            <constraint firstItem="kdv-CV-8o5" firstAttribute="centerY" secondItem="qFN-8f-iui" secondAttribute="centerY" id="Uar-nf-diH"/>
+                            <constraint firstItem="hKg-bH-uxU" firstAttribute="top" secondItem="dVD-C5-q4m" secondAttribute="bottom" constant="10" id="hf5-66-Rcm"/>
+                            <constraint firstItem="kdv-CV-8o5" firstAttribute="centerX" secondItem="qFN-8f-iui" secondAttribute="centerX" id="lsR-B0-kM2"/>
+                            <constraint firstItem="dVD-C5-q4m" firstAttribute="top" secondItem="Uvk-EQ-mHv" secondAttribute="bottom" id="qkS-Mh-mwN"/>
+                            <constraint firstItem="dVD-C5-q4m" firstAttribute="leading" secondItem="qFN-8f-iui" secondAttribute="leading" id="zNp-hE-bZf"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Multipart" id="BJh-3W-Vj0"/>
+                    <connections>
+                        <outlet property="activityIndicator" destination="kdv-CV-8o5" id="r8Z-cf-IGK"/>
+                        <outlet property="button" destination="hKg-bH-uxU" id="KIC-gO-ceH"/>
+                        <outlet property="imageView" destination="dVD-C5-q4m" id="yy8-E4-D68"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1Mg-4d-Twr" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="301.60000000000002" y="748.87556221889065"/>
+        </scene>
         <!--Jokes-->
         <scene sceneID="6Lo-7T-T6C">
             <objects>
@@ -153,6 +205,26 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <segue destination="ZDi-fj-mNW" kind="show" id="F1X-Hg-9jq"/>
+                                        </connections>
+                                    </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" textLabel="ZjD-Sf-CAi" style="IBUITableViewCellStyleDefault" id="DEw-a2-8Je">
+                                        <rect key="frame" x="0.0" y="132" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="DEw-a2-8Je" id="QnJ-ze-h45">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Multipart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ZjD-Sf-CAi">
+                                                    <rect key="frame" x="16" y="0.0" width="343" height="43.5"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="oVP-Rv-Uha" kind="show" id="3BL-CK-wMF"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>

@@ -15,6 +15,8 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		7109C93422F1D49000194658 /* CachingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7109C93322F1D49000194658 /* CachingViewController.swift */; };
 		7109C93622F1D4BD00194658 /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7109C93522F1D4BD00194658 /* APIError.swift */; };
+		719D0FD02301A30700CCC18E /* MultipartRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 719D0FCF2301A30700CCC18E /* MultipartRequestViewController.swift */; };
+		719D0FD22301A40100CCC18E /* image.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 719D0FD12301A40100CCC18E /* image.jpeg */; };
 		71A5625822E7A8630077523B /* SimpleRequestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71A5625722E7A8630077523B /* SimpleRequestViewController.swift */; };
 		71E1202C22F31545005E1E13 /* CombinedResourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71E1202B22F31545005E1E13 /* CombinedResourceViewController.swift */; };
 		C94700FF36B06D17500B767B /* Pods_SimpleREST_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A5017CB2E90D4B862D0F751 /* Pods_SimpleREST_Tests.framework */; };
@@ -47,6 +49,8 @@
 		70EE6E2A991D927BF6106383 /* SimpleREST.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = SimpleREST.podspec; path = ../SimpleREST.podspec; sourceTree = "<group>"; };
 		7109C93322F1D49000194658 /* CachingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachingViewController.swift; sourceTree = "<group>"; };
 		7109C93522F1D4BD00194658 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		719D0FCF2301A30700CCC18E /* MultipartRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultipartRequestViewController.swift; sourceTree = "<group>"; };
+		719D0FD12301A40100CCC18E /* image.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image.jpeg; sourceTree = "<group>"; };
 		71A5625722E7A8630077523B /* SimpleRequestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimpleRequestViewController.swift; sourceTree = "<group>"; };
 		71E1202B22F31545005E1E13 /* CombinedResourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CombinedResourceViewController.swift; sourceTree = "<group>"; };
 		8A5017CB2E90D4B862D0F751 /* Pods_SimpleREST_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SimpleREST_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -104,7 +108,9 @@
 				71A5625722E7A8630077523B /* SimpleRequestViewController.swift */,
 				7109C93322F1D49000194658 /* CachingViewController.swift */,
 				71E1202B22F31545005E1E13 /* CombinedResourceViewController.swift */,
+				719D0FCF2301A30700CCC18E /* MultipartRequestViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
+				719D0FD12301A40100CCC18E /* image.jpeg */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
@@ -260,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */,
+				719D0FD22301A40100CCC18E /* image.jpeg in Resources */,
 				607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */,
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
 			);
@@ -382,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				71A5625822E7A8630077523B /* SimpleRequestViewController.swift in Sources */,
+				719D0FD02301A30700CCC18E /* MultipartRequestViewController.swift in Sources */,
 				7109C93622F1D4BD00194658 /* APIError.swift in Sources */,
 				7109C93422F1D49000194658 /* CachingViewController.swift in Sources */,
 				71E1202C22F31545005E1E13 /* CombinedResourceViewController.swift in Sources */,

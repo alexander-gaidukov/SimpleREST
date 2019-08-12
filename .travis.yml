@@ -2,11 +2,11 @@
 # * http://www.objc.io/issue-6/travis-ci.html
 # * https://github.com/supermarin/xcpretty#usage
 
-osx_image: xcode9
+osx_image: xcode10.3
 language: objective-c
 podfile: Example/Podfile
 xcode_workspace: Example/SimpleREST.xcworkspace
 xcode_scheme: SimpleREST-Example
-xcode_sdk: iphonesimulator9.3
+xcode_sdk: iphonesimulator12.4
 script:
-- xcodebuild clean build test -workspace Example/SimpleREST.xcworkspace -scheme SimpleREST-Example -destination "platform=iOS Simulator,name=iPhone 7,OS=11.0" CODE_SIGNING_REQUIRED=NO
+- xcodebuild clean build test -workspace Example/SimpleREST.xcworkspace -scheme SimpleREST-Example -destination "platform=iOS Simulator,name=iPhone Xs,OS=12.4" CODE_SIGNING_REQUIRED=NO

@@ -13,7 +13,7 @@ public final class HTTPCache {
     private var cache: [String: CacheItem] = [:]
     
     private init() {
-        NotificationCenter.default.addObserver(self, selector: #selector(clear), name: Notification.Name.UIApplicationDidReceiveMemoryWarning, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(clear), name: UIApplication.didReceiveMemoryWarningNotification, object: nil)
     }
     
     public func save<A, E: Error>(data: Data, for resource: Resource<A, E>) {

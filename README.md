@@ -10,6 +10,8 @@ Simple REST is a RESTful client with ability to cache response data.
 
 ## How to use
 
+### Simple request
+
 ```swift
 let webClient = WebClient(baseUrl: "<Your API server base url>")
 

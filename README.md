@@ -13,24 +13,30 @@ Simple REST is a RESTful client with ability to cache response data.
 ### Simple request
 
 ```swift
+
+struct Object: Decodable {
+// some properties here
+}
+
+struct APIError: Error, Decodable {
+// some properties here
+}
+
 let webClient = WebClient(baseUrl: "<Your API server base url>")
 
-let resource = Resource<Object, CustomError>(path: "/resource_path",
-method: .get,
+let resource = Resource<Object, CustomError>(baseURL: URL(string: "https://...")!
+path: "resource_path",
 params: ["param1": "value1", "param2": "value2"],
+method: .get,
 headers: ["headerField1": "value1"],
-parse: { (data: Data) -> Object in
-    return <Object instance from raw json data>
-},
-parseError: { (data: Data) -> CustomError
-    return <CustomError instance from raw json data>
-})
+decoder: JSONDecoder())
 
-let task = webClient.load(resource: resource) { response in
-    if let object = response.value {
+let task = URLSession.shared.load(resource: resource) { result in
+    switch result {
+    case .success(let object):
         // handle object
-    } else {
-        // handle response.error
+    case .failure(let error):
+        // handle error
     }
 }
 ```
@@ -39,23 +45,6 @@ let task = webClient.load(resource: resource) { response in
 
 ```swift
 task?.cancel()
-```
-
-### Codable objects
-If your Object and CustomError conform to `Codable` protocol you can create a `Resource` object in a simpler way
-
-```swift
-let resource = Resource<Object, CustomError>(jsonDecoder: JSONDecoder(), path: "/resource_path",
-method: .get,
-params: ["param1": "value1", "param2": "value2"],
-headers: ["headerField1": "value1"])
-```
-### Common parameters and headers
-If you need to add some common parameters or headers to all requests (`access_token` for instance), you can do this in the following way:
-
-```swift
-webClient.commonParams["access_token"] = "12345"
-webClient.commonHeaders["access_token"] = "12345"
 ```
 
 ### Caching

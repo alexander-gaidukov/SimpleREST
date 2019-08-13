@@ -71,6 +71,10 @@ extension Resource {
         return combined.flatMap(transform)
     }
     
+    public func flatMap<B>(_ transform: @escaping (A) -> CombinedResource<B, E>) -> CombinedResource<B, E> {
+        return combined.flatMap(transform)
+    }
+    
     public func zipWith<B, C>(_ other: Resource<B, E>, combine: @escaping (A, B) -> C) -> CombinedResource<C, E> {
         return combined.zipWith(other.combined, combine: combine)
     }

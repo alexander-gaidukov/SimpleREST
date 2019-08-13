@@ -46,14 +46,9 @@ struct Object {
     var property: String
 }
 
-let resource = Resource<Object, CustomError>(baseURL: URL(string: "https://...")!
-path: "resource_path",
-params: ["param1": "value1", "param2": "value2"],
-method: .get,
-headers: ["headerField1": "value1"],
-decoder: JSONDecoder()).map { $0.property }
+let resource = Resource<Object, CustomError>(...).map { $0.property }
 ```
-The resource type is `Resource<String, CustomError>`
+The `resource` type is `Resource<String, CustomError>`
 
 You can use `compactMap` if property type is optional.
 ```swift
@@ -61,12 +56,7 @@ struct Object {
     var property: String?
 }
 
-let resource = Resource<Object, CustomError>(baseURL: URL(string: "https://...")!
-path: "resource_path",
-params: ["param1": "value1", "param2": "value2"],
-method: .get,
-headers: ["headerField1": "value1"],
-decoder: JSONDecoder()).compactMap { $0.property }
+let resource = Resource<Object, CustomError>(...).compactMap { $0.property }
 ```
 
 ### Send data in the request body
@@ -93,8 +83,6 @@ method: .post(.multipart(params: ["param1": "value1", "param2": "value2"], attac
 headers: ["headerField1": "value1"],
 decoder: JSONDecoder())
 ```
-
-
 ### Task cancelling
 
 ```swift
@@ -106,12 +94,7 @@ task?.cancel()
 To use cache:
 
 ```swift
-let resource = Resource<Object, CustomError>(baseURL: URL(string: "https://...")!
-path: "resource_path",
-params: ["param1": "value1", "param2": "value2"],
-method: .get,
-headers: ["headerField1": "value1"],
-decoder: JSONDecoder())
+let resource = Resource<Object, CustomError>(...)
 
 let cacheableResource = resource.cacheable()
 
@@ -138,6 +121,56 @@ HTTPCache.shared.clear()
 You can also clear cache for specific resource:
 ```swift
 HTTPCache.shared.clearCache(for:)
+```
+
+### Combined requests
+Sometimes you need to make multiple consecutive or parallel requests. Use `flatMap` and `zipWith` methods for these purposes.
+
+```swift
+let resource = Resource<Object, CustomError>(...)
+let combinedResource = resource.flatMap { object in
+    return Resource<OtherObject, CustomError>(...)
+}
+URLSession.shared.load(combinedResource: combinedResource) { result in
+    switch result {
+    case .success(let otherObject):
+        // handle object
+    case .failure(let error):
+        // handle error
+    }
+}
+```
+
+```swift
+let resource = Resource<Object, CustomError>(...)
+let otherResource = Resource<OtherObject, CustomError>(...)
+let combinedResource = resource.zipWith(otherResource) { object, otherObject in
+    return <object that created from object and otherObject>
+}
+URLSession.shared.load(combinedResource: combinedResource) { result in
+    switch result {
+    case .success(let otherObject):
+        // handle object
+    case .failure(let error):
+        // handle error
+    }
+}
+```
+
+In case of consecutive request there are situanions when you make the second request only if the first request returns some specific parameter. You need to return `.value(A)` in case if you don't want to make the second request.
+
+```swift
+let resource = Resource<Object, CustomError>(...)
+let combinedResource = resource.flatMap { object in
+    if object.needAdditionalData {
+        return Resource<OtherObject, CustomError>(...).map { 
+            object.additionalData = $0
+            return object
+        }.combined
+    } else {
+        return .value(object)
+    }
+}
 ```
 
 ## Example

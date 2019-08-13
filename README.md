@@ -39,6 +39,36 @@ let task = URLSession.shared.load(resource: resource) { result in
 }
 ```
 
+### Map and compactMap
+Use `map` method to change the result type of the resource.
+```swift
+struct Object {
+    var property: String
+}
+
+let resource = Resource<Object, CustomError>(baseURL: URL(string: "https://...")!
+path: "resource_path",
+params: ["param1": "value1", "param2": "value2"],
+method: .get,
+headers: ["headerField1": "value1"],
+decoder: JSONDecoder()).map { $0.property }
+```
+The resource type is `Resource<String, CustomError>`
+
+You can use `compactMap` if property type is optional.
+```swift
+struct Object {
+    var property: String?
+}
+
+let resource = Resource<Object, CustomError>(baseURL: URL(string: "https://...")!
+path: "resource_path",
+params: ["param1": "value1", "param2": "value2"],
+method: .get,
+headers: ["headerField1": "value1"],
+decoder: JSONDecoder()).compactMap { $0.property }
+```
+
 ### Send data in the request body
 
 For `application/json` data:

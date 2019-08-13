@@ -22,8 +22,6 @@ struct APIError: Error, Decodable {
 // some properties here
 }
 
-let webClient = WebClient(baseUrl: "<Your API server base url>")
-
 let resource = Resource<Object, CustomError>(baseURL: URL(string: "https://...")!
 path: "resource_path",
 params: ["param1": "value1", "param2": "value2"],
@@ -74,23 +72,42 @@ task?.cancel()
 ```
 
 ### Caching
-```swift
-let cahedWebClient = CachedWebClient(webClient: webClient)
-let task = cahedWebClient.load(resource: resource,
-forceUpdate = true (if you want to invalidate cache), false by default
-cacheType = .permanent or .temporary(TimeInterval), .permanent by default
-) { response in
 
+To use cache:
+
+```swift
+let resource = Resource<Object, CustomError>(baseURL: URL(string: "https://...")!
+path: "resource_path",
+params: ["param1": "value1", "param2": "value2"],
+method: .get,
+headers: ["headerField1": "value1"],
+decoder: JSONDecoder())
+
+let cacheableResource = resource.cacheable()
+
+let task = URLSession.shared.load(resource: cacheableResource) { result in
+    switch result {
+    case .success(let object):
+        // handle object
+    case .failure(let error):
+        // handle error
+    }
 }
 ```
+
+You can specify cache key if you don't want to use the default one (path + all parameters) and cache live time (permanent by default)
+
+```swift
+let cacheableResource = resource.cacheable(key: "custom_key", liveTime: 60)
+```
+
 If you need to clear cache storage use the following command:
 ```swift
-Cache.clear()
+HTTPCache.shared.clear()
 ```
-You can also clear cache for specific resource or url path:
+You can also clear cache for specific resource:
 ```swift
-Cache.clear(forResource:)
-Cache.clear(forPath:)
+HTTPCache.shared.clearCache(for:)
 ```
 
 ## Example

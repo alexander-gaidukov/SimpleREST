@@ -41,6 +41,32 @@ let task = URLSession.shared.load(resource: resource) { result in
 }
 ```
 
+### Send data in the request body
+
+For `application/json` data:
+```swift
+let resource = Resource<Object, CustomError>(baseURL: URL(string: "https://...")!
+path: "resource_path",
+params: [:],
+method: .post(.json(["param1": "value1", "param2": "value2"])),
+headers: ["headerField1": "value1"],
+decoder: JSONDecoder())
+```
+
+For `multipart/form-data` data:
+```swift
+let attachment = try! Attachment(path: <path to file>)
+let attachments = ["images": [attachment]]
+
+let resource = Resource<Object, CustomError>(baseURL: URL(string: "https://...")!
+path: "resource_path",
+params: [:],
+method: .post(.multipart(params: ["param1": "value1", "param2": "value2"], attachments: attachments)),
+headers: ["headerField1": "value1"],
+decoder: JSONDecoder())
+```
+
+
 ### Task cancelling
 
 ```swift
